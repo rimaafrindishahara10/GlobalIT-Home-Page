@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #3da74e;
+  --color-brand-dark: #2f8a3e;
+  --color-brand-light: #7fd48c;
+  --color-azure: #1f7ac4;
+  --color-navy: #0b0e1d;
+  --color-ink: #1f2430;
+  --font-sans: "Poppins", system-ui, sans-serif;
+}
+
+@utility container-x {
+  margin-inline: auto;
+  width: min(1160px, 92%);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  color: #4b5563;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+.hero-bg {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(60% 60% at 85% 0%, rgba(31, 122, 196, 0.38), transparent),
+    radial-gradient(50% 60% at 8% 100%, rgba(61, 167, 78, 0.3), transparent),
+    linear-gradient(160deg, #0a0d1c, #111833 60%, #0c2a47);
+}
+
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 30%, transparent 75%);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.fade-up {
+  animation: fade-up 0.7s ease both;
+}
+
+.fade-up-2 {
+  animation: fade-up 0.7s ease 0.15s both;
+}
+
+.fade-up-3 {
+  animation: fade-up 0.7s ease 0.3s both;
+}
